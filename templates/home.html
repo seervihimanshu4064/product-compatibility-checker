@@ -1,0 +1,7 @@
+{% extends "base.html" %}{% block body %}
+<main><p class="muted">{{ items|length }} results{% if q %} for "{{ q }}"{% endif %}. <span id="hint">Tell us your device on any product page and we'll show fit badges here.</span></p>
+<div class="grid">{% for p in items %}
+<a class="card" href="/product/{{ p.id }}" data-id="{{ p.id }}"><div class="img">{{ p.icon }}</div>
+<div class="t">{{ p.name }}</div><div class="price">₹{{ p.price }} <s>₹{{ p.mrp }}</s></div><div class="badge" hidden></div></a>
+{% endfor %}</div></main>{% endblock %}
+{% block js %}<script>initListing()</script>{% endblock %}

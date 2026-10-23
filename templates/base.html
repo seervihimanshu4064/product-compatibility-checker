@@ -1,0 +1,6 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{% block title %}AmaShop{% endblock %}</title><link rel="stylesheet" href="/static/style.css"></head><body>
+<header><a class="logo" href="/">ama<b>shop</b></a>
+<form action="/" class="search"><input name="q" value="{{ q or '' }}" placeholder="Search accessories" aria-label="Search"><button>Search</button></form>
+<button id="chip" class="chip" title="Click to clear">📱 Add your device</button></header>
+{% block body %}{% endblock %}<script src="/static/fit.js"></script>{% block js %}{% endblock %}</body></html>

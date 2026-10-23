@@ -1,0 +1,12 @@
+{% extends "base.html" %}{% block title %}{{ p.name }}{% endblock %}{% block body %}
+<main class="pdp">
+<div class="gallery">{{ p.icon }}</div>
+<section class="info"><h1>{{ p.name }}</h1><div class="muted">★★★★☆ 4,218 ratings</div>
+<div class="bigprice"><span class="off">-23%</span> ₹{{ p.price }} <s>M.R.P ₹{{ p.mrp }}</s></div>
+<div id="fit" class="fitbox"><h2>Does it fit your device?</h2>
+<div class="fitrow"><input id="dev" list="dl" autocomplete="off" placeholder="Type your device, e.g. iPhone 15" aria-label="Your device"><datalist id="dl"></datalist><button id="chk" class="btn orange">Check fit</button></div>
+<div id="res" aria-live="polite"></div></div>
+<h3>Technical details</h3><ul>{% for k,v in p.specs.items() %}<li><b>{{ k.replace('_',' ').title() }}:</b> {{ v }}</li>{% endfor %}<li><b>Category:</b> {{ p.category }}</li></ul></section>
+<aside class="buy"><div class="bigprice">₹{{ p.price }}</div><div id="buywarn"></div><div class="ok2">In stock · FREE delivery</div>
+<button class="btn yellow" id="cart">Add to Cart</button><button class="btn orange" id="now">Buy Now</button></aside></main>{% endblock %}
+{% block js %}<script>initProduct({{ p.id }})</script>{% endblock %}
